@@ -8,4 +8,9 @@
           class="ru.sharova.springapp.ClassicalMusic">
     </bean>
 
+    <bean id="musicPlayer"
+          class="ru.sharova.springapp.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
 </beans>
