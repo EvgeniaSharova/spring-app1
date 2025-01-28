@@ -4,9 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="testBean"
-          class="ru.sharova.springapp.TestBean">
-        <constructor-arg value="Evgenia"/>
+    <bean id="musicBean"
+          class="ru.sharova.springapp.ClassicalMusic">
     </bean>
 
 </beans>
