@@ -1,8 +1,8 @@
 package ru.sharova.springapp;
 
-public class ClassicalMusic implements Music {
+public class JazzMusic implements Music {
     @Override
     public String getSong() {
-        return "Classical music";
+        return "jazz music";
     }
 }
