@@ -3,11 +3,11 @@ package ru.sharova.springapp;
 public class ClassicalMusic implements Music {
 
     public void doMyInit() {
-        System.out.println("method do my init");
+        System.out.println("init method classical music");
     }
 
-    public void doMyDestroy(){
-        System.out.println("method do my destroy");
+    public void doMyDestroy() {
+        System.out.println("destroy method classical music");
     }
 
     @Override

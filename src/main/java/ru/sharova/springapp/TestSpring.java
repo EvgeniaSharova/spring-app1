@@ -13,6 +13,9 @@ public class TestSpring {
         RockMusic secondRockMusic = context.getBean("rockMusic", RockMusic.class);
         System.out.println(firstRockMusic.getSong());
         System.out.println(secondRockMusic.getSong());
+        System.out.println("---------");
+        JazzMusic jazzMusic = context.getBean("jazzMusic", JazzMusic.class);
+        System.out.println(jazzMusic.getSong());
         context.close();
     }
 }
