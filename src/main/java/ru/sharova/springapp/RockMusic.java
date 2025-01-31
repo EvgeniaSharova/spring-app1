@@ -2,8 +2,19 @@ package ru.sharova.springapp;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class RockMusic implements Music {
+
+    List<String> rockMusicList = new ArrayList<>();
+
+    {
+        rockMusicList.add("rock music one");
+        rockMusicList.add("rock music two");
+        rockMusicList.add("rock music three");
+    }
 
     public void init() {
         System.out.println("init method rock music");
@@ -14,7 +25,7 @@ public class RockMusic implements Music {
     }
 
     @Override
-    public String getSong() {
-        return "Rock music";
+    public List<String> getSong() {
+        return rockMusicList;
     }
 }

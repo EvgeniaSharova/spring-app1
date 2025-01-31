@@ -1,13 +1,14 @@
 package ru.sharova.springapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-    private ClassicalMusic classicalMusic;
-
-    private RockMusic rockMusic;
+    private Music music1;
+    private Music music2;
+    private Music music3;
     private String name;
     private int volume;
 
@@ -15,9 +16,12 @@ public class MusicPlayer {
     }
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+    public MusicPlayer(@Qualifier("classicalMusic") Music music1,
+                       @Qualifier("rockMusic") Music music2,
+                       @Qualifier("jazzMusic") Music music3) {
+        this.music1 = music1;
+        this.music2 = music2;
+        this.music3 = music3;
     }
 
     public String getName() {
@@ -36,7 +40,19 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public String playMusic() {
-        return classicalMusic.getSong();
+    public String playMusic(GenresSongs genresSongs) {
+        int randomNumber = (int) (Math.random() * 3);
+        switch (genresSongs) {
+            case CLASSICAL -> {
+                return (String) music1.getSong().get(randomNumber);
+            }
+            case ROCK -> {
+                return (String) music2.getSong().get(randomNumber);
+            }
+            case JAZZ -> {
+                return (String) music3.getSong().get(randomNumber);
+            }
+        }
+        return null;
     }
 }
