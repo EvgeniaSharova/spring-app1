@@ -1,15 +1,23 @@
 package ru.sharova.springapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
-    private Music music;
+    private ClassicalMusic classicalMusic;
+
+    private RockMusic rockMusic;
     private String name;
     private int volume;
 
     public MusicPlayer() {
     }
 
-    public MusicPlayer(Music music) {
-        this.music = music;
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
     public String getName() {
@@ -28,7 +36,7 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void playMusic() {
-        System.out.println(music.getSong());
+    public String playMusic() {
+        return classicalMusic.getSong();
     }
 }

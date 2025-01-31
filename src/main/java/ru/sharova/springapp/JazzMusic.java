@@ -1,5 +1,8 @@
 package ru.sharova.springapp;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class JazzMusic implements Music {
     private JazzMusic() {
     }
