@@ -6,8 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Scope("singleton")
+
 public class RockMusic implements Music {
 
     List<String> rockMusicList = new ArrayList<>();
